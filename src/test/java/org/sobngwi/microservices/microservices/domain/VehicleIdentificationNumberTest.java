@@ -74,10 +74,11 @@ public class VehicleIdentificationNumberTest {
 		VehicleIdentificationNumber vin3 = new VehicleIdentificationNumber(
 				"00000000000000000");
 
-		assertThat(vin1).isNotNull();
-		assertThat(vin2).isNotNull();
-		assertThat(vin1.hashCode()).isEqualTo(vin2.hashCode()).isNotEqualTo(vin3.hashCode());
-		assertThat(vin1).isEqualTo(vin2).isNotEqualTo(vin3);
+		softly.assertThat(vin1).isNotNull();
+		softly.assertThat(vin2).isNotNull();
+		softly.assertThat(vin1.hashCode()).isEqualTo(vin2.hashCode()).isNotEqualTo(vin3.hashCode());
+		softly.assertThat(vin1).isEqualTo(vin2).isNotEqualTo(vin3);
+		softly.assertAll();
 
 	}
 
